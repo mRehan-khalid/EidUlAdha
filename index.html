@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eid ul Adha — Sonia Rani 👑</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IM+Fell+English:ital@0;1&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#0e0610;color:#f5ebe0;font-family:'Playfair Display',serif;overflow-x:hidden}
+
+/* BG CANVAS */
+#bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
+
+/* HEARTS */
+.hearts-layer{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.fheart{position:absolute;bottom:-60px;user-select:none;pointer-events:none;
+  animation:floatUp linear infinite}
+@keyframes floatUp{
+  0%{transform:translateY(0) rotate(-15deg) scale(.8);opacity:0}
+  8%{opacity:.75}92%{opacity:.3}
+  100%{transform:translateY(-115vh) rotate(22deg) scale(1.05);opacity:0}}
+
+/* LANG SWITCHER */
+#lsw{position:fixed;top:15px;right:15px;z-index:9999;display:flex;gap:7px}
+.lb{padding:6px 13px;border-radius:30px;border:1px solid rgba(220,110,160,.3);
+  background:rgba(20,5,20,.8);color:rgba(240,160,200,.8);font-size:.7rem;
+  letter-spacing:.06em;cursor:pointer;backdrop-filter:blur(14px);
+  transition:all .25s;font-family:inherit}
+.lb:hover,.lb.on{background:rgba(90,15,70,.9);color:#fff;
+  border-color:rgba(255,110,180,.55);box-shadow:0 0 14px rgba(255,100,170,.35)}
+
+/* SECTIONS */
+section{position:relative;z-index:3;padding:65px 22px;
+  min-height:80vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center}
+.glow-hr{height:1px;margin:0 8%;position:relative;z-index:3;
+  background:linear-gradient(90deg,transparent,rgba(200,70,130,.38),rgba(140,30,100,.28),transparent)}
+
+/* REVEAL */
+.rev{opacity:0;transform:translateY(34px);
+  transition:opacity .85s ease,transform .85s ease}
+.rev.in{opacity:1;transform:none}
+
+/* LANG SHOW/HIDE */
+.lt{display:none}.lt.on{display:block}
+.urdu{font-family:'Noto Nastaliq Urdu',serif;direction:rtl;text-align:right}
+
+/* ===== HERO ===== */
+#hero{text-align:center;min-height:100vh}
+.eid-pill{font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;
+  color:#cca040;border:1px solid rgba(200,160,60,.35);padding:7px 20px;
+  border-radius:40px;background:rgba(60,30,0,.35);backdrop-filter:blur(8px);
+  margin-bottom:30px;animation:fdown 1.2s ease forwards;opacity:0}
+.hero-name{font-size:clamp(2.8rem,9vw,6rem);font-weight:700;line-height:1.05;
+  background:linear-gradient(135deg,#ffe0f0 5%,#f09ac8 38%,#e05898 68%,#cca040 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  filter:drop-shadow(0 0 22px rgba(210,55,125,.4));
+  animation:fup 1.4s .3s ease forwards;opacity:0}
+.hero-by{font-size:clamp(.85rem,2.5vw,1.1rem);color:rgba(200,158,55,.85);
+  font-style:italic;margin-top:10px;letter-spacing:.05em;
+  animation:fup 1.4s .6s ease forwards;opacity:0}
+.h-line{width:100px;height:1px;margin:26px auto;
+  background:linear-gradient(90deg,transparent,#d05090,transparent);
+  animation:fup 1.4s .8s ease forwards;opacity:0}
+.hero-quote{font-size:clamp(1.25rem,3.8vw,2rem);font-style:italic;
+  line-height:1.7;max-width:640px;color:#f0e4dc;
+  animation:fup 1.4s 1s ease forwards;opacity:0}
+.hero-quote em{color:#f07ab0;font-style:normal}
+@keyframes fdown{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:none}}
+@keyframes fup{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.06)}}
+
+/* ===== GIFT ===== */
+#gift-sec{text-align:center}
+.sec-tag{font-size:.6rem;letter-spacing:.45em;text-transform:uppercase;
+  color:rgba(200,158,55,.6);margin-bottom:42px}
+.gift-wrap{cursor:pointer;display:inline-flex;flex-direction:column;align-items:center}
+.click-tag{font-size:.9rem;color:#f07ab0;margin-bottom:14px;animation:pulse 2s infinite}
+.gift-3d{width:165px;height:165px;
+  animation:gSpin 5s ease-in-out infinite;
+  filter:drop-shadow(0 0 22px rgba(200,55,130,.55)) drop-shadow(0 0 8px rgba(100,10,70,.9));
+  transition:transform .22s}
+.gift-wrap:hover .gift-3d{transform:scale(1.08)}
+@keyframes gSpin{
+  0%,100%{transform:rotateY(0deg) translateY(0)}
+  25%{transform:rotateY(90deg) translateY(-7px)}
+  50%{transform:rotateY(180deg) translateY(0)}
+  75%{transform:rotateY(270deg) translateY(-7px)}}
+
+/* ===== LETTER OVERLAY ===== */
+#ltr-ov{position:fixed;inset:0;background:rgba(4,0,12,.92);z-index:10000;
+  display:flex;align-items:center;justify-content:center;padding:18px;
+  opacity:0;pointer-events:none;transition:opacity .55s;backdrop-filter:blur(10px)}
+#ltr-ov.open{opacity:1;pointer-events:all}
+
+.svg-defs{position:absolute;width:0;height:0;overflow:hidden}
+
+.ltr-paper{
+  position:relative;max-width:510px;width:100%;max-height:100vh;overflow-y:auto;
+  padding:42px 34px 34px;border-radius:2px;
+  /* Aged paper with lines */
+  background:
+repeating-linear-gradient(transparent,transparent 26px,rgba(75,35,5,.04) 26px,rgba(75,35,5,.04) 27px),
+linear-gradient(158deg,#f5e5b5 0%,#ead898 22%,#f2dda8 52%,#e6d28e 78%,#f0dcaa 90%,#f9edc8 100%);
+filter: url(#roughen);
+  box-shadow:0 28px 90px rgba(0,0,0,.72),0 0 0 1px rgba(140,90,20,.2);
+  transform:scale(.62) rotateX(24deg) rotateZ(-1.5deg);
+  transition:transform .72s cubic-bezier(.34,1.56,.64,1)}
+#ltr-ov.open .ltr-paper{transform:scale(1) rotateX(0deg) rotateZ(0deg)}
+
+/* Burnt corners */
+.ltr-paper::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:5;
+  background:
+    radial-gradient(circle at 0% 0%,  rgba(14,5,0,.96) 0%,rgba(38,12,0,.68) 14%,rgba(60,20,0,.25) 24%,transparent 35%),
+    radial-gradient(circle at 100% 0%, rgba(12,4,0,.93) 0%,rgba(32,10,0,.62) 13%,rgba(55,18,0,.2)  22%,transparent 33%),
+    radial-gradient(circle at 0% 100%,rgba(16,5,0,.95) 0%,rgba(42,14,0,.7)  16%,rgba(65,22,0,.28) 26%,transparent 37%),
+    radial-gradient(circle at 100% 100%,rgba(16,6,0,.97) 0%,rgba(44,15,0,.72) 17%,rgba(65,22,0,.3) 28%,transparent 39%);
+  border-radius:inherit}
+/* Age stains */
+.ltr-paper::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:4;
+  background:
+    radial-gradient(ellipse at 28% 42%,rgba(90,50,5,.1)  0%,transparent 48%),
+    radial-gradient(ellipse at 72% 65%,rgba(70,35,5,.09) 0%,transparent 42%),
+    radial-gradient(ellipse at 58% 18%,rgba(110,60,8,.08)0%,transparent 40%),
+    radial-gradient(ellipse at 15% 78%,rgba(80,40,5,.07) 0%,transparent 36%);
+  border-radius:inherit}
+
+.ltr-x{position:absolute;top:11px;right:13px;font-size:1.25rem;
+  color:rgba(70,30,5,.5);cursor:pointer;background:none;border:none;
+  transition:color .2s;z-index:10;font-family:inherit}
+.ltr-x:hover{color:rgba(110,18,18,.9)}
+
+.ltr-head{text-align:center;margin-bottom:17px;position:relative;z-index:6}
+.ltr-head h2{font-family:'IM Fell English',serif;font-size:1.38rem;
+  color:#5c1c0a;font-style:italic}
+.ltr-date{font-size:.7rem;color:rgba(65,28,5,.52);margin-top:3px;font-style:italic}
+.ltr-div{width:76%;height:1px;margin:0 auto 18px;position:relative;z-index:6;
+  background:linear-gradient(90deg,transparent,rgba(140,75,18,.4),transparent)}
+.ltr-body{position:relative;z-index:6}
+.ltr-body p{font-family:'IM Fell English',serif;font-style:italic;
+  font-size:clamp(.84rem,2.4vw,.97rem);line-height:1.9;color:#3a1505;margin-bottom:12px}
+.ltr-body .salut{font-size:1.07rem;font-weight:bold;color:#681010;font-style:normal}
+.rose-tap{display:block;font-size:3.6rem;text-align:center;margin:18px auto 2px;
+  cursor:pointer;filter:drop-shadow(0 4px 14px rgba(170,0,35,.55));
+  animation:rosePulse 2.5s ease-in-out infinite;position:relative;z-index:6}
+@keyframes rosePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.rose-hint{text-align:center;font-size:.67rem;font-style:italic;
+  font-family:'IM Fell English',serif;position:relative;z-index:6}
+
+/* ===== ROSE FULLSCREEN ===== */
+#rose-fs{position:fixed;inset:0;
+  background:radial-gradient(ellipse at center,#1c0006 0%,#060002 100%);
+  z-index:20000;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;opacity:0;pointer-events:none;transition:opacity .9s}
+#rose-fs.open{opacity:1;pointer-events:all}
+.rose-glow{position:absolute;width:360px;height:360px;border-radius:50%;
+  background:radial-gradient(circle,rgba(180,0,25,.14) 0%,transparent 65%);
+  animation:rgPulse 3s ease-in-out infinite alternate;pointer-events:none}
+@keyframes rgPulse{from{transform:scale(.88);opacity:.6}to{transform:scale(1.18);opacity:1}}
+#rose-canvas{position:relative;z-index:2}
+.rose-cap{margin-top:26px;position:relative;z-index:2;
+  font-size:clamp(.88rem,2.8vw,1.3rem);color:rgba(255,145,165,.88);
+  font-style:italic;letter-spacing:.05em;text-align:center;
+  animation:capGlow 3.5s ease-in-out infinite alternate}
+@keyframes capGlow{from{opacity:.6}to{opacity:1;text-shadow:0 0 22px rgba(255,75,115,.55)}}
+.rose-xbtn{position:absolute;top:17px;right:19px;font-size:1.45rem;
+  color:rgba(255,135,155,.5);cursor:pointer;background:none;border:none;
+  transition:color .2s;font-family:inherit}
+.rose-xbtn:hover{color:rgba(255,175,195,.95)}
+
+/* ===== WALLET ===== */
+#wallet-sec{text-align:center}
+.w-stage{position:relative;display:inline-flex;flex-direction:column;align-items:center;cursor:pointer}
+.w-hint{font-size:.78rem;font-style:italic;color:rgba(195,128,185,.72);
+  margin-bottom:13px;animation:pulse 2.4s ease-in-out infinite}
+
+/* Notes fly */
+.notes-fly{position:absolute;bottom:calc(100% - 18px);left:50%;transform:translateX(-50%);
+  display:flex;gap:9px;align-items:flex-end;pointer-events:none;opacity:0}
+.n-card{width:125px;border-radius:6px;overflow:hidden;
+  box-shadow:0 6px 28px rgba(0,70,20,.55),0 0 0 1px rgba(110,155,75,.3);
+  transform:translateY(38px) scale(.84);
+  transition:transform .68s cubic-bezier(.34,1.56,.64,1),opacity .5s ease;opacity:0}
+.notes-fly.pop{opacity:1}
+.notes-fly.pop .n-card:nth-child(1){transform:translateY(-95px) rotate(-13deg) scale(1.04);opacity:1;transition-delay:.04s}
+.notes-fly.pop .n-card:nth-child(2){transform:translateY(-112px) rotate(0deg) scale(1.08);opacity:1;transition-delay:.14s}
+.notes-fly.pop .n-card:nth-child(3){transform:translateY(-95px) rotate(13deg) scale(1.04);opacity:1;transition-delay:.24s}
+
+/* Wallet art */
+.wallet-art{width:224px;height:148px;position:relative}
+.wflap-wrap{position:absolute;top:0;left:0;right:0;height:70px;
+  transform-origin:top center;transition:transform .62s cubic-bezier(.25,.46,.45,.94)}
+.wflap-wrap.opened{transform:perspective(350px) rotateX(-155deg)}
+
+/* CHITTI SCROLL */
+.chitti-wrap{margin-top:52px;display:flex;flex-direction:column;align-items:center}
+.chitti-scroll{
+  position:relative;width:235px;height:42px;
+  background:linear-gradient(180deg,#faf2d4 0%,#f2e4b0 28%,#e9d498 52%,#f2e4b0 74%,#faf2d4 100%);
+  border-radius:21px;
+  box-shadow:0 5px 18px rgba(0,0,0,.42),
+    inset 0 1px 0 rgba(255,255,235,.88),
+    inset 0 -3px 7px rgba(75,35,0,.2),
+    4px 0 10px rgba(0,0,0,.22),-4px 0 10px rgba(0,0,0,.22);
+  overflow:hidden;
+  opacity:0;
+  transition:height 1.65s cubic-bezier(.34,1.3,.64,1),
+    border-radius 1.4s ease,opacity .5s ease}
+.chitti-scroll.shown{opacity:1}
+.chitti-scroll.unrolled{height:175px;border-radius:8px}
+.chitti-threads{position:absolute;inset:0;pointer-events:none;z-index:10;
+  transition:opacity .7s 1s}
+.chitti-scroll.unrolled .chitti-threads{opacity:0}
+.tl{position:absolute;left:0;right:0;height:2.5px;
+  background:linear-gradient(90deg,rgba(90,42,8,0) 2%,#7c3c12 14%,#5a2808 50%,#7c3c12 86%,rgba(90,42,8,0) 98%);
+  border-radius:1px}
+.tl1{top:10px}.tl2{top:26px}
+.tknot{position:absolute;left:50%;top:7px;transform:translateX(-50%);
+  font-size:.9rem;color:#5a2808;filter:drop-shadow(0 1px 2px rgba(0,0,0,.35));
+  line-height:1}
+.chitti-inner{position:absolute;inset:0;padding:48px 18px 16px;
+  text-align:center;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  font-family:'IM Fell English',serif;opacity:0;
+  background:repeating-linear-gradient(transparent,transparent 22px,rgba(70,35,8,.08) 22px,rgba(70,35,8,.08) 23px);
+  transition:opacity .6s 1.45s}
+.chitti-scroll.unrolled .chitti-inner{opacity:1}
+.chitti-inner p{font-size:.88rem;color:#3a1a08;line-height:1.72;font-style:italic}
+.chitti-heart{font-size:1.3rem;margin:5px 0}
+.chitti-sig{font-size:.7rem;color:rgba(75,28,8,.62);margin-top:7px}
+
+/* ===== FOOTER ===== */
+#footer{text-align:center;min-height:50vh}
+.footer-big{font-size:clamp(2rem,6vw,3.5rem);font-weight:700;
+  background:linear-gradient(135deg,#cca040,#eec060,#e05898,#f07ab8);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  filter:drop-shadow(0 0 12px rgba(200,158,50,.35));margin-bottom:20px}
+.footer-sub{font-size:clamp(.88rem,2.5vw,1.05rem);font-style:italic;
+  color:rgba(215,148,185,.7);max-width:400px;line-height:1.72}
+.footer-sig{margin-top:28px;font-size:.7rem;color:rgba(175,118,155,.42);letter-spacing:.09em}
+
+/* MOBILE */
+@media(max-width:480px){
+  .ltr-paper{padding:34px 17px 26px}
+  .n-card{width:100px}
+  .chitti-scroll{width:200px}
+  .rose-glow{width:270px;height:270px}
+  .wallet-art{width:190px;height:126px}
+}
+</style>
+</head>
+<body>
+
+<!-- SVG FILTERS -->
+<svg class="svg-defs">
+  <defs>
+    <filter id="torn" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.028 0.022" numOctaves="5" seed="13" result="nz"/>
+      <feDisplacementMap in="SourceGraphic" in2="nz" scale="11" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+</svg>
+
+<canvas id="bg-canvas"></canvas>
+<div class="hearts-layer" id="heartsL"></div>
+
+<!-- LANG SWITCHER -->
+<div id="lsw">
+  <button class="lb on" onclick="setLang('en')">EN</button>
+  <button class="lb" onclick="setLang('ur')">اردو</button>
+  <button class="lb" onclick="setLang('pa')">پښتو</button>
+</div>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <div class="eid-pill">✦ Eid ul Adha Mubarak ✦</div>
+  <h1 class="hero-name">Sonia Rani 👑</h1>
+  <p class="hero-by">Muhammad Rehan Khalid ✨</p>
+  <div class="h-line"></div>
+  <div class="lt on" id="q-en">
+    <p class="hero-quote"><em>I am entirely yours</em>.....</p>
+    <p class="hero-quote" style="margin-top:6px">what more do you want??</p>
+  </div>
+  <div class="lt urdu" id="q-ur">
+    <p class="hero-quote" style="font-size:clamp(1.1rem,3.5vw,1.85rem);margin-top:4px">میں مکمل طور پر تمہارا ہوں...</p>
+    <p class="hero-quote" style="font-size:clamp(1.1rem,3.5vw,1.85rem);margin-top:6px">تمہیں اور کیا چاہیے؟</p>
+  </div>
+  <div class="lt" id="q-pa">
+    <p class="hero-quote urdu" style="font-size:clamp(1rem,3.2vw,1.75rem);margin-top:4px">زه ټول ستا یم...</p>
+    <p class="hero-quote urdu" style="font-size:clamp(1rem,3.2vw,1.75rem);margin-top:6px">تا نور سا غواړې؟</p>
+  </div>
+</section>
+
+<div class="glow-hr"></div>
+
+<!-- ===== GIFT ===== -->
+<section id="gift-sec">
+  <p class="sec-tag rev">✦ a gift from the heart ✦</p>
+  <div class="gift-wrap rev" onclick="openLetter()">
+    <p class="click-tag">Click Me ❤️</p>
+    <div class="gift-3d">
+      <svg viewBox="0 0 165 165" xmlns="http://www.w3.org/2000/svg" width="165" height="165">
+        <defs>
+          <linearGradient id="bxG" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#3a0050"/><stop offset="100%" stop-color="#180030"/>
+          </linearGradient>
+          <linearGradient id="ldG" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#58007a"/><stop offset="100%" stop-color="#280055"/>
+          </linearGradient>
+          <linearGradient id="rbG" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#e865a8"/><stop offset="48%" stop-color="#ffc0dc"/>
+            <stop offset="100%" stop-color="#e865a8"/>
+          </linearGradient>
+          <radialGradient id="bwG" cx="38%" cy="38%">
+            <stop offset="0%" stop-color="#ffd0e8"/><stop offset="100%" stop-color="#b82862"/>
+          </radialGradient>
+          <filter id="giftGlow"><feGaussianBlur stdDeviation="2.5" result="b"/>
+            <feComposite in="SourceGraphic" in2="b" operator="over"/></filter>
+        </defs>
+        <!-- Box body -->
+        <rect x="22" y="80" width="121" height="70" rx="7" fill="url(#bxG)"
+          stroke="rgba(190,95,175,.38)" stroke-width="1.2"/>
+        <!-- Lid -->
+        <rect x="15" y="61" width="135" height="23" rx="5" fill="url(#ldG)"
+          stroke="rgba(190,95,175,.32)" stroke-width="1"/>
+        <!-- Vertical ribbon -->
+        <rect x="74" y="61" width="17" height="89" rx="3" fill="url(#rbG)"/>
+        <!-- Horizontal ribbon on lid -->
+        <rect x="15" y="67" width="135" height="11" rx="2" fill="url(#rbG)"/>
+        <!-- Left bow loop -->
+        <ellipse cx="59" cy="52" rx="27" ry="13" fill="url(#bwG)"
+          transform="rotate(-17 59 52)" opacity=".9"/>
+        <!-- Right bow loop -->
+        <ellipse cx="106" cy="52" rx="27" ry="13" fill="url(#bwG)"
+          transform="rotate(17 106 52)" opacity=".9"/>
+        <!-- Bow center knot -->
+        <circle cx="82" cy="53" r="13" fill="url(#bwG)"/>
+        <circle cx="78" cy="49" r="4.5" fill="rgba(255,225,235,.38)"/>
+        <!-- Gift tag -->
+        <rect x="77" y="22" width="24" height="18" rx="3"
+          fill="rgba(255,205,225,.72)" stroke="rgba(195,95,155,.48)" stroke-width=".8"/>
+        <line x1="89" y1="22" x2="89" y2="40" stroke="rgba(190,75,135,.55)" stroke-width=".8"/>
+        <circle cx="89" cy="20" r="2.2" fill="rgba(190,75,135,.55)"/>
+        <!-- Sparkles -->
+        <text x="34" y="110" font-size="11" fill="rgba(250,195,220,.36)">✦</text>
+        <text x="112" y="102" font-size="9"  fill="rgba(250,175,210,.3)">✦</text>
+        <text x="49" y="133" font-size="7"   fill="rgba(220,160,200,.28)">✧</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LETTER OVERLAY ===== -->
+<div id="ltr-ov">
+  <div class="ltr-paper">
+    <button class="ltr-x" onclick="closeLetter()">✕</button>
+
+    <div class="ltr-head">
+      <h2>Mere Dil Ki Rani...</h2>
+      <p class="ltr-date">written with love &amp; longing</p>
+    </div>
+
+    <div class="ltr-div"></div>
+
+    <!-- ENGLISH -->
+    <div class="ltr-body lt on" id="lb-en">
+
+      <!-- LANGUAGE DATE -->
+      <p class="ltr-date" style="text-align:center; opacity:0.85;">
+        Eid ul Adha · Dhul Hijjah · 1446H
+      </p>
+
+      <p class="salut">My dearest Sonia Rani 👑,</p>
+
+      <p>On this blessed day of Eid ul Adha — when the world speaks of devotion and sacred sacrifice — every thought I carry holds only your name. Not as habit, but as heartbeat.</p>
+
+      <p>You are not merely my wife. You are the warmth that lingers long after every storm, the light I reach for before I've even opened my eyes each morning. You are the prayer I didn't know I was making.</p>
+
+      <p>I may not always find the right words, and I may not always say what I should. But know this — in every silence between us, I am loving you. Completely. Without condition.</p>
+
+      <p>This Eid, I offer nothing grand. Only this: every breath I take, every dua I whisper at dawn... they are all for you, about you, because of you. Forever.</p>
+      
+      <p >
+        Happy 4th Upcoming Anniversary!! ❤️<br>
+        1,427 days together… In Sha Allah, we will be together in this dunya and Akhirah. May Allah remove every obstacle in our marriage and bless our bond with endless love and peace. 🤍
+      </p>
+      
+      <p style="text-align:right;color:#5c1010;margin-top:16px">
+        Forever, completely yours —<br><strong>Muhammad Rehan Khalid ✨</strong>
+      </p>
+
+    </div>
+
+
+    <!-- URDU -->
+    <div class="ltr-body lt urdu" id="lb-ur" style="display:none">
+
+      <!-- LANGUAGE DATE -->
+      <p class="ltr-date" style="text-align:center;">
+        عید الاضحیٰ · ذو الحجہ · ۱۴۴۶ھ
+      </p>
+
+      <p class="salut">میری پیاری سونیا رانی 👑،</p>
+
+      <p>عید الاضحی کے اس مبارک دن پر — جب سارا جہاں قربانی اور عقیدت کی بات کرتا ہے — میری ہر سوچ میں صرف آپ کا نام ہے۔ عادت سے نہیں، دل کی دھڑکن سے۔</p>
+
+      <p>آپ صرف میری بیوی نہیں — آپ وہ گرمائش ہیں جو ہر طوفان کے بعد بھی باقی رہتی ہے، وہ روشنی جسے میں آنکھیں کھولنے سے پہلے ڈھونڈتا ہوں۔ آپ وہ دعا ہیں جو مجھے معلوم نہ تھا کہ میں مانگ رہا ہوں۔</p>
+
+      <p>میں شاید ہمیشہ صحیح الفاظ نہ کہہ سکوں، لیکن یہ جانیے — ہمارے درمیان ہر خاموشی میں، میں آپ سے محبت کر رہا ہوتا ہوں۔ مکمل، بے شرط۔</p>
+
+      <p>اس عید پر کوئی بڑا تحفہ نہیں — بس یہ: میری ہر سانس، ہر صبح کی دعا... سب آپ کے لیے، آپ کے بارے میں، آپ کی وجہ سے۔ ہمیشہ کے لیے۔</p>
+
+      <p >
+        ❤️ چوتھی آنے والی سالگرہ مبارک ہو!!<br>
+        ۱۴۲۷ دن ساتھ گزر چکے ہیں… ان شاء اللہ ہم اس دنیا اور آخرت میں ہمیشہ ساتھ رہیں گے۔ اللہ ہمارے نکاح میں ہر رکاوٹ دور فرمائے اور ہمارے رشتے کو بے انتہا محبت اور سکون عطا فرمائے۔ 🤍
+      </p>
+      <p style="text-align:left;color:#5c1010;margin-top:16px">
+        ہمیشہ کے لیے آپ کا —<br><strong>محمد ریحان خالد ✨</strong>
+      </p>
+
+    </div>
+
+
+    <!-- PASHTO -->
+    <div class="ltr-body lt pa" id="lb-pa" style="display:none">
+
+      <!-- LANGUAGE DATE -->
+      <p class="ltr-date" style="text-align:center;">
+        د اختر الاضحی · ذو الحجہ · ۱۴۴۶ هـ
+      </p>
+
+      <p class="salut">زما ګرانه سونیا راني 👑،</p>
+
+      <p>د اختر الاضحی پر دې مبارکه ورځ — کله چې ټوله نړۍ د قربانۍ او ایمان خبره کوي — زما هره فکر یوازې ستاسو نوم لري۔ د عادت له مخې نه، د زړه له دھڑکن له مخې۔</p>
+
+      <p>تاسو یوازې زما میرمن نه یاست — تاسو هغه ګرمي یاست چې هر توپان وروسته پاتې کیږي، هغه رڼا چې زه یې د سترګو خلاصولو نه مخکې لټوم۔ تاسو هغه دعا یاست چې ما نه پوهېدل چې کومه یې غواړم۔</p>
+
+      <p>زه کیدای شي تل سم کلمې ونه وایم، خو دا پوه شئ — زموږ ترمنځ هره چوپتیا کې زه له تاسو سره مینه کوم۔ بشپړه، بې شرطه۔</p>
+
+      <p>پر دې اختر کوم لوی تحفه نشته — یوازې دا: زما هره ساه، هره سهار دعا... ټول ستاسو لپاره، ستاسو دپاره، ستاسو له امله۔ تل تر تله۔</p>
+      
+      <p >
+        ❤️ د څلورمې راتلونکې کلیزې مبارکي!!<br>
+        ۱۴۲۷ ورځې تېرې شوې دي… ان شاء الله موږ به په دې دنیا او آخرت کې تل یو ځای یو. الله دې زموږ د نکاح هر خنډ لرې کړي او زموږ اړیکه دې له بې پای مینې او سکون څخه ډکه کړي. 🤍
+      </p>
+      
+            <p style="text-align:left;color:#5c1010;margin-top:16px">
+              تل ستاسو —<br><strong>محمد ریحان خالد ✨</strong>
+            </p>
+    </div>
+
+
+    <span class="rose-tap" onclick="openRose(event)">🌹</span>
+    <p class="rose-hint">tap the rose ♡</p>
+
+  </div>
+</div>
+
+<!-- ===== ROSE FULLSCREEN ===== -->
+<div id="rose-fs">
+  <button class="rose-xbtn" onclick="closeRose()">✕</button>
+  <div class="rose-glow"></div>
+  <canvas id="rose-canvas" width="340" height="340"></canvas>
+  <p class="rose-cap" id="roseCap">For you, Sonia Rani — blooming forever 🌹</p>
+</div>
+
+<div class="glow-hr"></div>
+
+<!-- ===== WALLET ===== -->
+<section id="wallet-sec">
+  <p class="sec-tag rev">✦ thora sa Eidi — dil se ✦</p>
+  <div class="w-stage rev" id="wStage" onclick="openWallet()">
+    <p class="w-hint">Tap to open 💜</p>
+
+    <!-- Notes fly out container -->
+    <div class="notes-fly" id="notesFly">
+      <div class="n-card" id="nc1"></div>
+      <div class="n-card" id="nc2"></div>
+      <div class="n-card" id="nc3"></div>
+    </div>
+
+    <!-- Wallet -->
+    <div class="wallet-art">
+      <!-- Body (bottom) -->
+      <svg id="wBody" viewBox="0 0 224 148" xmlns="http://www.w3.org/2000/svg"
+           style="position:absolute;inset:0;width:100%;height:100%">
+        <defs>
+          <linearGradient id="wbG" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#28083a"/>
+            <stop offset="45%" stop-color="#160525"/>
+            <stop offset="100%" stop-color="#220638"/>
+          </linearGradient>
+          <pattern id="leath" x="0" y="0" width="9" height="9" patternUnits="userSpaceOnUse">
+            <circle cx="4.5" cy="4.5" r="1.6" fill="rgba(255,255,255,.025)"/>
+          </pattern>
+        </defs>
+        <!-- Main body -->
+        <rect x="7" y="24" width="210" height="118" rx="11" fill="url(#wbG)"/>
+        <rect x="7" y="24" width="210" height="118" rx="11" fill="url(#leath)"/>
+        <!-- Stitching -->
+        <rect x="13" y="30" width="198" height="106" rx="9" fill="none"
+          stroke="rgba(195,130,255,.13)" stroke-width="1.1" stroke-dasharray="5,4"/>
+        <!-- Card slot left -->
+        <rect x="20" y="60" width="88" height="65" rx="7"
+          fill="rgba(35,0,60,.72)" stroke="rgba(175,95,255,.18)" stroke-width="1"/>
+        <!-- Note slot right -->
+        <rect x="120" y="58" width="78" height="68" rx="7"
+          fill="rgba(28,0,52,.72)" stroke="rgba(175,95,255,.18)" stroke-width="1"/>
+        <!-- SR monogram -->
+        <text x="59" y="101" font-size="19" fill="rgba(175,95,255,.22)"
+          font-family="Playfair Display,serif" font-style="italic" text-anchor="middle">SR</text>
+        <!-- Heart gem -->
+        <text x="159" y="99" font-size="20" fill="rgba(195,75,135,.35)" text-anchor="middle">💜</text>
+        <!-- Bottom shine line -->
+        <path d="M14,130 Q112,136 210,130" fill="none"
+          stroke="rgba(200,160,255,.07)" stroke-width="1"/>
+      </svg>
+
+      <!-- Flap (top) -->
+      <div class="wflap-wrap" id="wFlapDiv" style="position:absolute;top:0;left:0;right:0;height:72px">
+        <svg viewBox="0 0 224 72" xmlns="http://www.w3.org/2000/svg" width="100%" height="72">
+          <defs>
+            <linearGradient id="wfG" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#380a52"/>
+              <stop offset="100%" stop-color="#20043a"/>
+            </linearGradient>
+          </defs>
+          <path d="M7,24 Q112,-6 217,24 L217,62 Q112,45 7,62 Z" fill="url(#wfG)"
+            stroke="rgba(195,130,255,.28)" stroke-width="1"/>
+          <path d="M13,28 Q112,0 211,28 L211,56 Q112,40 13,56 Z" fill="none"
+            stroke="rgba(195,130,255,.1)" stroke-width=".8" stroke-dasharray="5,4"/>
+          <!-- Clasp -->
+          <ellipse cx="112" cy="58" rx="14" ry="7" fill="rgba(40,8,60,.9)"
+            stroke="rgba(195,130,255,.35)" stroke-width="1.2"/>
+          <ellipse cx="112" cy="57" rx="7" ry="3.5"
+            fill="rgba(195,130,255,.22)"/>
+          <!-- Wallet shine -->
+          <path d="M7,24 Q112,-6 217,24 Q195,20 112,22 Q58,23 7,24Z"
+            fill="rgba(255,255,255,.06)"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chitti scroll -->
+  <div class="chitti-wrap">
+    <div class="chitti-scroll" id="chittiScroll">
+      <div class="chitti-threads">
+        <div class="tl tl1"></div>
+        <div class="tl tl2"></div>
+        <div class="tknot">⊗</div>
+      </div>
+      <div class="chitti-inner">
+        <p>Asli toh ni de skta...</p>
+        <p>magar ye qubool kr lo</p>
+        <p class="chitti-heart">❤️</p>
+        <p class="chitti-sig">— Rehan ✨</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="glow-hr"></div>
+
+<!-- ===== FOOTER ===== -->
+<section id="footer">
+  <p class="footer-big rev">Eid Mubarak 🌙</p>
+  <div class="lt on rev" id="f-en">
+    <p class="footer-sub">May Allah bless you with endless joy this Eid, my queen. You are the greatest gift I never deserved — but was given anyway.</p>
+  </div>
+  <div class="lt urdu rev" id="f-ur">
+    <p class="footer-sub" style="font-family:'Noto Nastaliq Urdu',serif">
+      اللہ تعالیٰ تمہیں اس عید پر بے انتہا خوشیاں عطا کرے، میری رانی۔ تم وہ تحفہ ہو جس کے میں قابل نہ تھا، لیکن مل گیا۔</p>
+  </div>
+  <div class="lt rev" id="f-pa">
+    <p class="footer-sub urdu" style="font-family:'Noto Nastaliq Urdu',serif">
+      الله دې پر دې اختر بې حده خوشحالي درکړي، زما راني۔ ته هغه هدیه یې چې زه ورته وړ نه وم، خو راغله۔</p>
+  </div>
+  <div class="h-line" style="margin-top:28px"></div>
+  <p class="footer-sig rev">Made with ❤️ by Muhammad Rehan Khalid ✨ • Eid ul Adha</p>
+</section>
+
+<script>
+/* ============================================================
+   1. BOKEH BACKGROUND
+   ============================================================ */
+const bgC = document.getElementById('bg-canvas');
+const bgX = bgC.getContext('2d');
+let BW,BH;
+const orbColors=[
+  [165,68,45],[192,98,38],[142,38,95],[95,18,78],
+  [58,18,80],[215,125,55],[155,58,115],[100,30,65]
+];
+const orbs=[];
+function initBokeh(){
+  BW=bgC.width=window.innerWidth;
+  BH=bgC.height=window.innerHeight;
+  if(orbs.length)return;
+  for(let i=0;i<26;i++){
+    const c=orbColors[Math.floor(Math.random()*orbColors.length)];
+    orbs.push({x:Math.random()*BW,y:Math.random()*BH,
+      r:55+Math.random()*175,vx:(Math.random()-.5)*.22,vy:(Math.random()-.5)*.16,
+      op:.032+Math.random()*.062,ph:Math.random()*Math.PI*2,
+      sp:.003+Math.random()*.005,c});
+  }
+}
+function drawBokeh(t){
+  BW=bgC.width;BH=bgC.height;
+  bgX.clearRect(0,0,BW,BH);
+  const bg=bgX.createRadialGradient(BW*.45,BH*.4,0,BW*.5,BH*.5,BW*.85);
+  bg.addColorStop(0,'#1e0a18');bg.addColorStop(.55,'#130610');bg.addColorStop(1,'#0b0308');
+  bgX.fillStyle=bg;bgX.fillRect(0,0,BW,BH);
+  orbs.forEach(o=>{
+    const op=o.op*(0.68+0.32*Math.sin(t*.001*o.sp*280+o.ph));
+    o.x+=o.vx;o.y+=o.vy;
+    if(o.x<-o.r)o.x=BW+o.r;if(o.x>BW+o.r)o.x=-o.r;
+    if(o.y<-o.r)o.y=BH+o.r;if(o.y>BH+o.r)o.y=-o.r;
+    const g=bgX.createRadialGradient(o.x,o.y,0,o.x,o.y,o.r);
+    g.addColorStop(0,`rgba(${o.c[0]},${o.c[1]},${o.c[2]},${op})`);
+    g.addColorStop(.48,`rgba(${o.c[0]},${o.c[1]},${o.c[2]},${op*.28})`);
+    g.addColorStop(1,`rgba(${o.c[0]},${o.c[1]},${o.c[2]},0)`);
+    bgX.fillStyle=g;bgX.beginPath();bgX.arc(o.x,o.y,o.r,0,Math.PI*2);bgX.fill();
+  });
+  requestAnimationFrame(drawBokeh);
+}
+initBokeh();
+window.addEventListener('resize',()=>{BW=bgC.width=window.innerWidth;BH=bgC.height=window.innerHeight});
+requestAnimationFrame(drawBokeh);
+
+/* ============================================================
+   2. FLOATING HEARTS
+   ============================================================ */
+const hL=document.getElementById('heartsL');
+const hEmojis=['❤️','💜','🩷','💕','💗','💖','✨','💝','🌸'];
+function spawnHeart(){
+  const h=document.createElement('span');
+  h.className='fheart';
+  h.textContent=hEmojis[Math.floor(Math.random()*hEmojis.length)];
+  const dur=5.5+Math.random()*8,sz=.85+Math.random()*1.15;
+  h.style.cssText=`left:${Math.random()*100}%;font-size:${sz}rem;animation-duration:${dur}s;animation-delay:${Math.random()*1.5}s`;
+  hL.appendChild(h);
+  setTimeout(()=>h.remove(),(dur+2)*1000);
+}
+setInterval(spawnHeart,750);
+
+/* ============================================================
+   3. LANGUAGE
+   ============================================================ */
+let curLang='en';
+function setLang(l){
+  curLang=l;
+  document.querySelectorAll('.lb').forEach(b=>b.classList.remove('on'));
+  document.querySelector(`.lb[onclick="setLang('${l}')"]`).classList.add('on');
+  ['en','ur','pa'].forEach(x=>{
+    document.querySelectorAll(`#q-${x},#f-${x}`).forEach(el=>el.classList.toggle('on',x===l));
+  });
+  document.querySelectorAll('.ltr-body').forEach(el=>el.style.display='none');
+  const lb=document.querySelector(`#lb-${l}`);if(lb)lb.style.display='block';
+  const caps={en:'For you, Sonia Rani — blooming forever 🌹',
+    ur:'تمہارے لیے، سونیا رانی — ہمیشہ کھلتا ہوا 🌹',
+    pa:'ستا لپاره، سونیا راني — تل ګلول کیږي 🌹'};
+  document.getElementById('roseCap').textContent=caps[l];
+}
+
+/* ============================================================
+   4. LETTER
+   ============================================================ */
+function openLetter(){
+  const ov=document.getElementById('ltr-ov');
+  ov.classList.add('open');
+  document.querySelectorAll('.ltr-body').forEach(el=>el.style.display='none');
+  const lb=document.querySelector(`#lb-${curLang}`);if(lb)lb.style.display='block';
+}
+function closeLetter(){document.getElementById('ltr-ov').classList.remove('open')}
+document.getElementById('ltr-ov').addEventListener('click',e=>{
+  if(e.target===document.getElementById('ltr-ov'))closeLetter();
+});
+
+/* ============================================================
+   5. CANVAS ROSE — high-quality multi-layer
+   ============================================================ */
+const RC=document.getElementById('rose-canvas');
+const RX=RC.getContext('2d');
+let rAngle=0,rAF=null;
+
+function petalGrad(cx,cy,a,r1,r2,c0,c1,c2){
+  const bx=cx+r1*Math.cos(a),by=cy+r1*Math.sin(a);
+  const tx=cx+r2*Math.cos(a),ty=cy+r2*Math.sin(a);
+  const g=RX.createLinearGradient(bx,by,tx,ty);
+  g.addColorStop(0,c0);g.addColorStop(.38,c1);
+  g.addColorStop(.78,c1);g.addColorStop(1,c2);
+  return g;
+}
+
+function drawPetal(cx,cy,a,r1,r2,wFac,fill,op=1){
+  const nx=Math.cos(a),ny=Math.sin(a);
+  const px=-ny,py=nx;
+  const bx=cx+r1*nx,by=cy+r1*ny;
+  const tx=cx+r2*nx,ty=cy+r2*ny;
+  const mR=r1+(r2-r1)*.54, hw=(r2-r1)*wFac;
+  const lx=cx+mR*nx+hw*px, ly=cy+mR*ny+hw*py;
+  const rx2=cx+mR*nx-hw*px, ry2=cy+mR*ny-hw*py;
+  const cR=r2*.06;
+  RX.save();RX.globalAlpha=op;
+  RX.beginPath();
+  RX.moveTo(bx,by);
+  RX.bezierCurveTo(lx,ly,tx-cR*ny,ty+cR*nx,tx,ty);
+  RX.bezierCurveTo(tx+cR*ny,ty-cR*nx,rx2,ry2,bx,by);
+  RX.closePath();
+  RX.fillStyle=fill;RX.fill();
+  // vein
+  RX.beginPath();RX.moveTo(bx,by);
+  RX.lineTo(cx+(r1+(r2-r1)*.82)*nx,cy+(r1+(r2-r1)*.82)*ny);
+  RX.strokeStyle='rgba(50,0,0,.15)';RX.lineWidth=.6;RX.stroke();
+  // highlight stripe
+  const hlg=RX.createLinearGradient(bx+hw*.25*px,by+hw*.25*py,bx-hw*.25*px,by-hw*.25*py);
+  hlg.addColorStop(0,'rgba(255,180,180,.22)');hlg.addColorStop(.35,'rgba(255,100,100,.08)');
+  hlg.addColorStop(1,'rgba(0,0,0,0)');
+  RX.fillStyle=hlg;
+  RX.beginPath();
+  RX.moveTo(bx,by);
+  RX.bezierCurveTo(lx,ly,tx-cR*ny,ty+cR*nx,tx,ty);
+  RX.bezierCurveTo(tx+cR*ny,ty-cR*nx,rx2,ry2,bx,by);
+  RX.closePath();RX.fill();
+  RX.restore();
+}
+
+function drawSepal(cx,cy,a,R){
+  const nx=Math.cos(a),ny=Math.sin(a);
+  const px=-ny,py=nx;
+  const r1=R*.1,r2=R*.75,hw=(r2-r1)*.1;
+  const mR=r1+(r2-r1)*.5;
+  const bx=cx+r1*nx,by=cy+r1*ny;
+  const tx=cx+r2*nx,ty=cy+r2*ny;
+  const lx=cx+mR*nx+hw*px,ly=cy+mR*ny+hw*py;
+  const rx2=cx+mR*nx-hw*px,ry2=cy+mR*ny-hw*py;
+  RX.save();RX.globalAlpha=.72;
+  RX.beginPath();
+  RX.moveTo(bx,by);
+  RX.quadraticCurveTo(lx,ly,tx,ty);
+  RX.quadraticCurveTo(rx2,ry2,bx,by);
+  RX.closePath();
+  const g=RX.createLinearGradient(bx,by,tx,ty);
+  g.addColorStop(0,'#0a3208');g.addColorStop(.6,'#1a5e14');g.addColorStop(1,'#228b18');
+  RX.fillStyle=g;RX.fill();
+  RX.restore();
+}
+
+function drawRose(angle){
+  const W=RC.width,H=RC.height,cx=W/2,cy=H/2;
+  const R=Math.min(W,H)*.42;
+  RX.clearRect(0,0,W,H);
+
+  // Ambient glow beneath
+  const ag=RX.createRadialGradient(cx,cy+R*.12,0,cx,cy+R*.1,R*1.1);
+  ag.addColorStop(0,'rgba(185,0,22,.18)');ag.addColorStop(1,'rgba(0,0,0,0)');
+  RX.fillStyle=ag;RX.fillRect(0,0,W,H);
+
+  // 5 Sepals
+  for(let i=0;i<5;i++) drawSepal(cx,cy,(i/5)*Math.PI*2+angle+Math.PI/5,R);
+
+  // Outer petals (13)
+  for(let i=0;i<13;i++){
+    const a=(i/13)*Math.PI*2+angle;
+    drawPetal(cx,cy,a,R*.5,R,  .3,petalGrad(cx,cy,a,R*.5,R,'#780012','#e80020','#ff2538'),.92);
+  }
+  // Mid-outer (10, offset)
+  for(let i=0;i<10;i++){
+    const a=(i/10)*Math.PI*2+angle+Math.PI/10;
+    drawPetal(cx,cy,a,R*.32,R*.72,.28,petalGrad(cx,cy,a,R*.32,R*.72,'#620010','#c80018','#e00020'),.94);
+  }
+  // Mid inner (8)
+  for(let i=0;i<8;i++){
+    const a=(i/8)*Math.PI*2+angle;
+    drawPetal(cx,cy,a,R*.18,R*.48,.3,petalGrad(cx,cy,a,R*.18,R*.48,'#500010','#a8001a','#c80018'),.96);
+  }
+  // Inner (6)
+  for(let i=0;i<6;i++){
+    const a=(i/6)*Math.PI*2+angle+Math.PI/6;
+    drawPetal(cx,cy,a,R*.1,R*.3,.34,petalGrad(cx,cy,a,R*.1,R*.3,'#3a0008','#880015','#a80018'),1);
+  }
+  // Core (4)
+  for(let i=0;i<4;i++){
+    const a=(i/4)*Math.PI*2+angle+Math.PI/8;
+    drawPetal(cx,cy,a,R*.055,R*.17,.38,petalGrad(cx,cy,a,R*.055,R*.17,'#280005','#680010','#880012'),1);
+  }
+  // Center
+  const cg=RX.createRadialGradient(cx-R*.04,cy-R*.04,0,cx,cy,R*.11);
+  cg.addColorStop(0,'#7a0010');cg.addColorStop(.5,'#4a0008');cg.addColorStop(1,'#240004');
+  RX.beginPath();RX.arc(cx,cy,R*.11,0,Math.PI*2);RX.fillStyle=cg;RX.fill();
+  // Center highlight dot
+  const ch=RX.createRadialGradient(cx-R*.038,cy-R*.045,0,cx-R*.038,cy-R*.045,R*.048);
+  ch.addColorStop(0,'rgba(255,175,175,.42)');ch.addColorStop(1,'rgba(255,175,175,0)');
+  RX.fillStyle=ch;RX.beginPath();RX.arc(cx-R*.038,cy-R*.045,R*.048,0,Math.PI*2);RX.fill();
+}
+
+function animateRose(){
+  rAngle+=.007;
+  drawRose(rAngle);
+  rAF=requestAnimationFrame(animateRose);
+}
+
+function openRose(e){
+  e.stopPropagation();
+  document.getElementById('rose-fs').classList.add('open');
+  if(!rAF) animateRose();
+}
+function closeRose(){
+  document.getElementById('rose-fs').classList.remove('open');
+  if(rAF){cancelAnimationFrame(rAF);rAF=null;}
+}
+
+/* ============================================================
+   6. PKR 5000 NOTE SVG
+   ============================================================ */
+function makePKRNote(serial,rot){
+  return `<svg viewBox="0 0 290 122" xmlns="http://www.w3.org/2000/svg" width="125" height="53">
+  <defs>
+    <linearGradient id="ng${serial}" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#183d10"/>
+      <stop offset="30%"  stop-color="#254f1a"/>
+      <stop offset="68%"  stop-color="#1b4414"/>
+      <stop offset="100%" stop-color="#112e0a"/>
+    </linearGradient>
+    <pattern id="np${serial}" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(28)">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="rgba(100,165,55,.11)" stroke-width=".7"/>
+    </pattern>
+    <linearGradient id="sgold${serial}" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#d4c060"/>
+      <stop offset="50%"  stop-color="#f0e088"/>
+      <stop offset="100%" stop-color="#c8b050"/>
+    </linearGradient>
+  </defs>
+  <!-- Paper -->
+  <rect width="290" height="122" rx="6" fill="url(#ng${serial})"/>
+  <rect width="290" height="122" rx="6" fill="url(#np${serial})"/>
+  <!-- Outer border -->
+  <rect x="4"  y="4"  width="282" height="114" rx="4" fill="none"
+    stroke="rgba(175,215,95,.48)" stroke-width="1.4"/>
+  <!-- Inner border -->
+  <rect x="8"  y="8"  width="274" height="106" rx="3" fill="none"
+    stroke="rgba(135,180,72,.28)" stroke-width=".7"/>
+  <!-- Security gold strip -->
+  <rect x="138" y="0" width="3.5" height="122" fill="url(#sgold${serial})" opacity=".55"/>
+  <!-- Watermark zone (slightly lighter) -->
+  <rect x="54" y="0" width="20" height="122" fill="rgba(255,255,255,.03)" rx="0"/>
+
+  <!-- Top label -->
+  <text x="145" y="20" font-size="7" fill="rgba(205,240,120,.82)"
+    font-family="Georgia,serif" text-anchor="middle" letter-spacing="1.8">STATE BANK OF PAKISTAN</text>
+
+  <!-- Big 5000 bottom-left -->
+  <text x="15" y="76" font-size="34" font-weight="bold" fill="rgba(228,252,135,.92)"
+    font-family="Georgia,serif" letter-spacing="-1">5000</text>
+
+  <!-- Urdu text -->
+  <text x="92" y="42" font-size="9.5" fill="rgba(215,248,125,.88)"
+    font-family="Noto Nastaliq Urdu,serif" text-anchor="middle">پانچ ہزار روپیہ</text>
+
+  <!-- Mosque outline (Faisal Mosque simplified) -->
+  <!-- Main dome -->
+  <path d="M195,82 Q212,58 229,82" fill="rgba(108,168,58,.3)" stroke="rgba(140,205,75,.35)" stroke-width=".9"/>
+  <ellipse cx="212" cy="82" rx="24" ry="10" fill="rgba(105,162,55,.22)"/>
+  <!-- Side minarets -->
+  <rect x="185" y="64" width="5" height="26" rx="2" fill="rgba(108,168,58,.28)"/>
+  <path d="M185,64 Q187.5,57 190,64" fill="rgba(118,178,65,.38)"/>
+  <rect x="229" y="64" width="5" height="26" rx="2" fill="rgba(108,168,58,.28)"/>
+  <path d="M229,64 Q231.5,57 234,64" fill="rgba(118,178,65,.38)"/>
+  <!-- Base -->
+  <rect x="184" y="90" width="55" height="5" rx="1" fill="rgba(95,152,50,.28)"/>
+  <!-- Small minarets far -->
+  <rect x="172" y="72" width="4" height="18" rx="1.5" fill="rgba(100,158,52,.2)"/>
+  <rect x="243" y="72" width="4" height="18" rx="1.5" fill="rgba(100,158,52,.2)"/>
+
+  <!-- Portrait circle -->
+  <circle cx="38" cy="68" r="26" fill="rgba(75,128,45,.18)" stroke="rgba(115,175,65,.22)" stroke-width=".7"/>
+  <!-- Jinnah head silhouette -->
+  <ellipse cx="38" cy="54" rx="10" ry="12" fill="rgba(85,138,48,.32)"/>
+  <path d="M25,84 Q30,68 38,66 Q46,68 51,84" fill="rgba(80,132,45,.38)"/>
+  <!-- Karakul cap hint -->
+  <path d="M28.5,47 Q38,40 47.5,47 Q46,43 38,41 Q30,43 28.5,47Z" fill="rgba(90,145,52,.38)"/>
+
+  <!-- Promise text -->
+  <text x="145" y="101" font-size="5.5" fill="rgba(188,228,108,.58)"
+    font-family="Georgia,serif" text-anchor="middle" font-style="italic">
+    I promise to pay the bearer the sum of Five Thousand Rupees</text>
+
+  <!-- Serial -->
+  <text x="13" y="113" font-size="6" fill="rgba(172,212,95,.68)"
+    font-family="monospace">BW ${serial} 452389${rot}</text>
+  <text x="277" y="113" font-size="6" fill="rgba(172,212,95,.68)"
+    font-family="monospace" text-anchor="end">BW ${serial} 452389${rot}</text>
+
+  <!-- Crescent star watermark -->
+  <text x="70"  y="85" font-size="24" fill="rgba(170,215,88,.06)" font-family="serif">☽</text>
+  <text x="86"  y="73" font-size="10" fill="rgba(170,215,88,.06)" font-family="serif">✦</text>
+
+  <!-- Bottom denomination -->
+  <text x="15"  y="118" font-size="14" font-weight="bold" fill="rgba(215,248,118,.62)"
+    font-family="Georgia,serif">5000</text>
+  <text x="145" y="118" font-size="6.5" fill="rgba(195,235,105,.55)"
+    font-family="serif" text-anchor="middle">پاکستان</text>
+  </svg>`;
+}
+document.getElementById('nc1').innerHTML=makePKRNote('AA2024','1');
+document.getElementById('nc2').innerHTML=makePKRNote('BB2024','2');
+document.getElementById('nc3').innerHTML=makePKRNote('CC2024','3');
+
+/* ============================================================
+   7. WALLET OPEN
+   ============================================================ */
+let walletDone=false;
+function openWallet(){
+  if(walletDone)return;
+  walletDone=true;
+  document.getElementById('wFlapDiv').classList.add('opened');
+  setTimeout(()=>document.getElementById('notesFly').classList.add('pop'),350);
+  // Show chitti
+  setTimeout(()=>{
+    const cs=document.getElementById('chittiScroll');
+    cs.classList.add('shown');
+    setTimeout(()=>cs.classList.add('unrolled'),900);
+  },1200);
+}
+
+/* ============================================================
+   8. SCROLL REVEAL
+   ============================================================ */
+const revObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');revObs.unobserve(e.target);}});
+},{threshold:.14});
+document.querySelectorAll('.rev').forEach(el=>revObs.observe(el));
+</script>
+</body>
+</html>
