@@ -405,6 +405,11 @@ section{position:relative;z-index:3;padding:65px 22px;
     <button class="ltr-x" onclick="closeLetter()">✕</button>
 
     <div class="ltr-head">
+      <div style="display:flex;gap:6px;justify-content:center;margin-bottom:14px;position:relative;z-index:6">
+        <button onclick="setLang('en')" style="padding:5px 12px;border-radius:20px;border:1px solid rgba(130,60,15,.4);background:rgba(245,225,170,.5);color:#5c1c0a;font-size:.65rem;letter-spacing:.05em;cursor:pointer;font-family:inherit">EN</button>
+        <button onclick="setLang('ur')" style="padding:5px 12px;border-radius:20px;border:1px solid rgba(130,60,15,.4);background:rgba(245,225,170,.5);color:#5c1c0a;font-size:.65rem;cursor:pointer;font-family:'Noto Nastaliq Urdu',serif">اردو</button>
+        <button onclick="setLang('pa')" style="padding:5px 12px;border-radius:20px;border:1px solid rgba(130,60,15,.4);background:rgba(245,225,170,.5);color:#5c1c0a;font-size:.65rem;cursor:pointer;font-family:'Noto Nastaliq Urdu',serif">پښتو</button>
+      </div>
       <h2>Mere Dil Ki Rani...</h2>
       <p class="ltr-date">written with love &amp; longing</p>
     </div>
