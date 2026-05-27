@@ -9,9 +9,9 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:#0e0610;color:#f5ebe0;font-family:'Playfair Display',serif;overflow-x:hidden} 
+body{background:#0e0610;color:#f5ebe0;font-family:'Playfair Display',serif;overflow-x:hidden}
 
-/* BG CANVAS */ 
+/* BG CANVAS */
 #bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
 
 /* HEARTS */
@@ -141,8 +141,9 @@ section{position:relative;z-index:3;padding:65px 22px;
   background:linear-gradient(90deg,transparent,rgba(140,75,18,.4),transparent)}
 .ltr-body{position:relative;z-index:6}
 .ltr-body p{font-family:'IM Fell English',serif;font-style:italic;
-  font-size:clamp(.84rem,2.4vw,.97rem);line-height:1.9;color:#3a1505;margin-bottom:12px}
+  font-size:clamp(.84rem,2.4vw,.97rem);line-height:1.9;color:#3a1505;margin-bottom:8px}
 .ltr-body .salut{font-size:1.07rem;font-weight:bold;color:#681010;font-style:normal}
+.ltr-urdu-only p{margin-bottom:0px  !important}
 .rose-tap{display:block;font-size:3.6rem;text-align:center;margin:18px auto 2px;
   cursor:pointer;filter:drop-shadow(0 4px 14px rgba(170,0,35,.55));
   animation:rosePulse 2.5s ease-in-out infinite;position:relative;z-index:6}
@@ -406,10 +407,10 @@ section{position:relative;z-index:3;padding:65px 22px;
 
     <div class="ltr-head">
       <div style="display:flex;gap:6px;justify-content:center;margin-bottom:14px;position:relative;z-index:6">
-        <button onclick="setLang('en')" style="padding:5px 12px;border-radius:20px;border:1px solid rgba(130,60,15,.4);background:rgba(245,225,170,.5);color:#5c1c0a;font-size:.65rem;letter-spacing:.05em;cursor:pointer;font-family:inherit">EN</button>
-        <button onclick="setLang('ur')" style="padding:5px 12px;border-radius:20px;border:1px solid rgba(130,60,15,.4);background:rgba(245,225,170,.5);color:#5c1c0a;font-size:.65rem;cursor:pointer;font-family:'Noto Nastaliq Urdu',serif">اردو</button>
-        <button onclick="setLang('pa')" style="padding:5px 12px;border-radius:20px;border:1px solid rgba(130,60,15,.4);background:rgba(245,225,170,.5);color:#5c1c0a;font-size:.65rem;cursor:pointer;font-family:'Noto Nastaliq Urdu',serif">پښتو</button>
-      </div>
+  <button onclick="setLang('en')" style="padding:5px 12px;border-radius:20px;border:1px solid rgba(130,60,15,.4);background:rgba(245,225,170,.5);color:#5c1c0a;font-size:.65rem;letter-spacing:.05em;cursor:pointer;font-family:inherit">EN</button>
+  <button onclick="setLang('ur')" style="padding:5px 12px;border-radius:20px;border:1px solid rgba(130,60,15,.4);background:rgba(245,225,170,.5);color:#5c1c0a;font-size:.65rem;cursor:pointer;font-family:'Noto Nastaliq Urdu',serif">اردو</button>
+  <button onclick="setLang('pa')" style="padding:5px 12px;border-radius:20px;border:1px solid rgba(130,60,15,.4);background:rgba(245,225,170,.5);color:#5c1c0a;font-size:.65rem;cursor:pointer;font-family:'Noto Nastaliq Urdu',serif">پښتو</button>
+</div>
       <h2>Mere Dil Ki Rani...</h2>
       <p class="ltr-date">written with love &amp; longing</p>
     </div>
@@ -457,28 +458,22 @@ section{position:relative;z-index:3;padding:65px 22px;
 
 
     <!-- URDU -->
-    <div class="ltr-body lt urdu" id="lb-ur" style="display:none">
+    <div class="ltr-body lt urdu ltr-urdu-only" id="lb-ur" style="display:none">
 
       <!-- LANGUAGE DATE -->
       <p class="ltr-date" style="text-align:center;">
         عید الاضحیٰ · ذو الحجہ · ۱۴۴۶ھ
       </p>
-
-      <p class="salut">میری پیاری سونیا رانی 👑،</p>
-
+      <p class="salut">میری پیاری سونیا رانی 👑</p>
       <p>عید الاضحی کے اس مبارک دن پر — جب سارا جہاں قربانی اور عقیدت کی بات کرتا ہے — میری ہر سوچ میں صرف آپ کا نام ہے۔ عادت سے نہیں، دل کی دھڑکن سے۔</p>
-
       <p>آپ صرف میری بیوی نہیں — آپ وہ گرمائش ہیں جو ہر طوفان کے بعد بھی باقی رہتی ہے، وہ روشنی جسے میں آنکھیں کھولنے سے پہلے ڈھونڈتا ہوں۔ آپ وہ دعا ہیں جو مجھے معلوم نہ تھا کہ میں مانگ رہا ہوں۔</p>
-
       <p>میں شاید ہمیشہ صحیح الفاظ نہ کہہ سکوں، لیکن یہ جانیے — ہمارے درمیان ہر خاموشی میں، میں آپ سے محبت کر رہا ہوتا ہوں۔ مکمل، بے شرط۔</p>
-
       <p>اس عید پر کوئی بڑا تحفہ نہیں — بس یہ: میری ہر سانس، ہر صبح کی دعا... سب آپ کے لیے، آپ کے بارے میں، آپ کی وجہ سے۔ ہمیشہ کے لیے۔</p>
-
       <p >
-        ❤️ چوتھی آنے والی سالگرہ مبارک ہو!!<br>
+        ❤️ چوتھی آنے والی سالگرہ مبارک ہو!!
         ۱۴۲۷ دن ساتھ گزر چکے ہیں… ان شاء اللہ ہم اس دنیا اور آخرت میں ہمیشہ ساتھ رہیں گے۔ اللہ ہمارے نکاح میں ہر رکاوٹ دور فرمائے اور ہمارے رشتے کو بے انتہا محبت اور سکون عطا فرمائے۔ 🤍
       </p>
-      <p style="text-align:left;color:#5c1010;margin-top:16px">
+      <p style="text-align:left;color:#5c1010;margin-top:2px">
         ہمیشہ کے لیے آپ کا —<br><strong>محمد ریحان خالد ✨</strong>
       </p>
 
@@ -486,14 +481,14 @@ section{position:relative;z-index:3;padding:65px 22px;
 
 
     <!-- PASHTO -->
-    <div class="ltr-body lt pa" id="lb-pa" style="display:none">
+    <div class="ltr-body lt urdu" id="lb-pa" style="display:none">
 
       <!-- LANGUAGE DATE -->
       <p class="ltr-date" style="text-align:center;">
         د اختر الاضحی · ذو الحجہ · ۱۴۴۶ هـ
       </p>
 
-      <p class="salut">زما ګرانه سونیا راني 👑،</p>
+      <p class="salut">زما ګرانه سونیا راني 👑</p>
 
       <p>د اختر الاضحی پر دې مبارکه ورځ — کله چې ټوله نړۍ د قربانۍ او ایمان خبره کوي — زما هره فکر یوازې ستاسو نوم لري۔ د عادت له مخې نه، د زړه له دھڑکن له مخې۔</p>
 
@@ -1054,24 +1049,38 @@ document.getElementById('photo-fs').addEventListener('click',function(e){if(e.ta
   function run(){
     if(busy)return;
     busy=true;
-    var g=document.getElementById('sg-wrap'),n=document.getElementById('sg-note'),nc2=document.getElementById('nc2');
+    var g=document.getElementById('sg-wrap'),
+        n=document.getElementById('sg-note'),
+        nc2=document.getElementById('nc2'),
+        stage=document.getElementById('stick-stage');
+
     g.classList.add('sg-run','run-in');
+
     setTimeout(function(){
       g.style.filter='drop-shadow(0 0 12px rgba(255,210,50,.85))';
       setTimeout(function(){g.style.filter='';},320);
       n.classList.add('show');
       if(nc2){nc2.style.transition='transform .35s,opacity .35s';nc2.style.transform='translateY(-55px) scale(1.15)';nc2.style.opacity='0';}
     },1380);
+
     setTimeout(function(){
-      g.classList.remove('sg-run');g.classList.add('sg-flee','run-out');n.classList.add('flee');
+      g.classList.remove('sg-run');
+      g.classList.add('sg-flee','run-out');
+      n.classList.add('flee');
     },1850);
+
     setTimeout(function(){
-      g.classList.remove('run-out','sg-flee','sg-run');
-      n.classList.remove('show','flee');
-      if(nc2){nc2.style.transform='';nc2.style.opacity='';nc2.style.transition='';}
-      busy=false; // ← reset taake agli baar phir aaye
+      stage.style.display='none'; // ← poora stage chupa do
+      setTimeout(function(){
+        g.classList.remove('run-out','sg-flee','sg-run');
+        n.classList.remove('show','flee');
+        if(nc2){nc2.style.transform='';nc2.style.opacity='';nc2.style.transition='';}
+        stage.style.display=''; // ← wapis lao (ab sab reset ho chuka)
+        busy=false;
+      },200);
     },4500);
   }
+
   var _o=window.openWallet;
   window.openWallet=function(){if(_o)_o.apply(this,arguments);setTimeout(run,800);};
 })();
